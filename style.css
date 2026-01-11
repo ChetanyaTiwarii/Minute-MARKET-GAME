@@ -1,0 +1,303 @@
+/* ================= GLOBAL RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ================= ROOT COLORS ================= */
+:root {
+  --neon: #00ffcc;
+  --danger: #ff4d4d;
+  --gold: #ffd700;
+  --glass: rgba(255,255,255,0.12);
+}
+
+/* ================= BODY ================= */
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #16222a, #0f2027);
+  background-size: 300% 300%;
+  animation: bgFlow 10s infinite alternate;
+  font-family: "Segoe UI", system-ui, sans-serif;
+  color: white;
+  text-align: center;
+}
+
+@keyframes bgFlow {
+  from { background-position: left; }
+  to { background-position: right; }
+}
+
+/* ================= LOGIN PAGE (GLASS UI) ================= */
+#loginPage {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 35px;
+  border-radius: 22px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.18),
+    rgba(255,255,255,0.05)
+  );
+  backdrop-filter: blur(14px);
+  box-shadow:
+    0 0 40px rgba(0,255,204,0.35),
+    inset 0 0 20px rgba(255,255,255,0.08);
+  animation: floatIn 1.2s ease;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(40px) scale(0.9); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+#loginPage h1 {
+  font-size: 40px;
+  margin-bottom: 25px;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 10px var(--neon),
+    0 0 35px var(--neon);
+}
+
+/* ================= INPUT FIELDS ================= */
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin: 14px 0;
+  font-size: 16px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: rgba(0,0,0,0.55);
+  color: white;
+  transition: all 0.25s ease;
+}
+
+input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+input:focus, select:focus {
+  box-shadow: 0 0 15px var(--neon);
+  transform: scale(1.03);
+}
+
+/* ================= GAME PAGE ================= */
+#gamePage {
+  display: none;
+  padding-top: 30px;
+  animation: fadeUp 1s ease;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ================= HEADER ================= */
+h1 {
+  font-size: 44px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
+  text-shadow:
+    0 0 8px var(--neon),
+    0 0 40px var(--neon);
+}
+
+#welcomeText {
+  font-size: 18px;
+  color: var(--neon);
+  margin-bottom: 15px;
+}
+
+/* ================= STATUS BAR ================= */
+#status {
+  display: flex;
+  justify-content: center;
+  gap: 22px;
+  margin: 20px auto;
+  padding: 16px 26px;
+  width: fit-content;
+  background: var(--glass);
+  border-radius: 18px;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 25px rgba(0,0,0,0.4);
+}
+
+/* ================= TIMER ================= */
+#time {
+  font-size: 32px;
+  font-weight: bold;
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.25); }
+  100% { transform: scale(1); }
+}
+
+/* ================= SCORE ================= */
+#score {
+  font-size: 38px;
+  color: var(--gold);
+  text-shadow: 0 0 15px var(--gold);
+}
+
+/* ================= COMBO / DIFFICULTY ================= */
+#combo {
+  color: #ffeb3b;
+}
+
+#difficulty {
+  color: #ff9800;
+}
+
+/* ================= BUTTONS ================= */
+button {
+  margin: 18px;
+  padding: 16px 34px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 14px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(145deg, var(--neon), #00cca3);
+  transition: all 0.25s ease;
+  box-shadow:
+    0 6px 15px rgba(0,0,0,0.4),
+    inset 0 0 8px rgba(255,255,255,0.25);
+}
+
+button:hover {
+  transform: scale(1.15) rotate(-1deg);
+  box-shadow:
+    0 0 20px var(--neon),
+    0 0 60px rgba(0,255,204,0.7);
+}
+
+button:active {
+  transform: scale(0.9);
+}
+
+/* ================= EVENT MESSAGE ================= */
+#eventMsg {
+  margin-top: 16px;
+  font-size: 20px;
+  color: #ffeb3b;
+  animation: popDown 0.4s ease;
+}
+
+@keyframes popDown {
+  from { opacity: 0; transform: translateY(-20px) scale(0.8); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* ================= LEADERBOARD ================= */
+ul {
+  list-style: none;
+  margin-top: 25px;
+}
+
+#board li {
+  margin: 12px auto;
+  padding: 14px;
+  width: 360px;
+  background: linear-gradient(
+    145deg,
+    rgba(255,255,255,0.2),
+    rgba(255,255,255,0.05)
+  );
+  border-radius: 14px;
+  backdrop-filter: blur(6px);
+  animation: slideIn 0.6s ease;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-40px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* ================= CONFETTI ================= */
+#confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+}
+
+.confetti {
+  position: absolute;
+  width: 10px;
+  height: 14px;
+  animation: fall linear forwards;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 600px) {
+  h1 { font-size: 34px; }
+  #board li { width: 90%; }
+}
+/* ================= SAFE BUTTON HARD PRESS FIX ================= */
+button.safe {
+  position: relative;
+  transform: translateY(0);
+  transition: 
+    transform 0.08s ease,
+    box-shadow 0.08s ease,
+    filter 0.08s ease;
+}
+
+/* Hover = halka upar */
+button.safe:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow:
+    0 10px 22px rgba(0,0,0,0.5),
+    0 0 20px rgba(46,204,113,0.9);
+}
+
+/* ACTIVE = proper DABNE ka FEEL */
+button.safe:active {
+  transform: translateY(4px) scale(0.97);
+  box-shadow:
+    inset 0 6px 10px rgba(0,0,0,0.6),
+    inset 0 0 14px rgba(0,0,0,0.4);
+  filter: brightness(0.85);
+}
+
+/* RIPPLE OFF ONLY FOR SAFE */
+button.safe::after {
+  display: none;
+}
+body.shop-open {
+  filter: blur(1.5px) brightness(0.85);
+}
+
+.score-coins {
+  color: gold;
+  font-size: 14px;
+}
+/* ================= COINS DISPLAY (TOP-RIGHT) ================= */
+#coinsDisplay {
+  position: fixed;
+  top: 15px;
+  right: 20px;
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.7); /* dark background */
+  padding: 8px 12px;
+  border-radius: 10px;
+  color: #ffd700; /* golden text */
+  font-weight: bold;
+  z-index: 999;
+  text-shadow: 0 0 6px #ffd700; /* subtle glow */
+}
+
+

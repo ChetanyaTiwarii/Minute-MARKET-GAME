@@ -1,0 +1,15 @@
+Player Input
+     ↓
+startGame()
+     ↓
+Game Session Created
+     ↓
+Safe / Risk Investment
+     ↓
+Score + Combo + Coins Logic
+     ↓
+Market Events
+     ↓
+Timer Ends
+     ↓
+Leaderboard Update

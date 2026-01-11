@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Minute Market</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ========= LOGIN PAGE ========= -->
+<div id="loginPage">
+  <h1>🎮 Minute Market</h1>
+  <p>Enter Player Details</p>
+
+  <input type="text" id="playerName" placeholder="Enter your name" />
+  <input type="number" id="playerAge" placeholder="Age" />
+  
+  <select id="playerRole">
+    <option value="">Select Role</option>
+    <option value="Student">Student</option>
+    <option value="Trader">Trader</option>
+    <option value="Gamer">Gamer</option>
+  </select>
+
+  <br><br>
+  <button onclick="startGame()">🚀 Start Game</button>
+</div>
+
+<!-- ========= GAME PAGE ========= -->
+<div id="gamePage" style="display:none;">
+
+  <h1>⏱ Minute Market</h1>
+  <p id="welcomeText"></p>
+
+  <h2>⏳ Time Left: <span id="time">60</span>s</h2>
+
+  <div id="status">
+    🔥 Combo: <span id="combo">0</span> |
+    🎯 Difficulty: <span id="difficulty">1</span>
+  </div>
+
+  <button onclick="investSafe()">🟢 Invest Safe</button>
+  <button onclick="investRisk()">🔴 High Risk</button>
+
+  <h2>💰 Score: <span id="score">0</span></h2>
+
+  <p id="eventMsg"></p>
+
+  <hr>
+  <h2>🏆 Leaderboard</h2>
+  <ul id="board"></ul>
+
+</div>
+
+<!-- CONFETTI -->
+<div id="confetti-container"></div>
+
+<script src="script.js"></script>
+</body>
+</html>

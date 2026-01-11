@@ -1,0 +1,30 @@
+[Player]
+- playerId
+- name
+- age
+- role
+      |
+      | 1
+      |
+      | *
+[GameSession]
+- sessionId
+- startTime
+- endTime
+- finalScore
+- coinsEarned
+      |
+      | 1
+      |
+      | *
+[Investment]
+- investmentId
+- type
+- scoreChange
+- timestamp
+
+[Leaderboard]
+- rankId
+- playerName
+- score
+- resultTitle
